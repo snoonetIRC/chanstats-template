@@ -7,10 +7,16 @@
 				margin-bottom: 20px;
 				margin-right: 20px;
 			}
+			.mdc-textfield {
+				margin-bottom: 0;
+			}
 			.list {
 				    -webkit-column-count: 3;
 				       -moz-column-count: 3;		
 				            column-count: 3;
+			}
+			.full-width {
+				width:100%;
 			}
 		</style>
 		    <link rel="stylesheet"
@@ -29,8 +35,8 @@
 			<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
 				<div class="mdc-card">
 					<div class="mdc-card__actions">
-						<div class="mdc-textfield">
-							<input type="text" id="search" class="mdc-textfield__input" placeholder="Filter channels by name...">
+						<div class="mdc-textfield full-width">
+							<input type="text" id="search" class="mdc-textfield__input full-width" placeholder="Filter channels by name...">
 						</div>
 					</div>
 				</div>
