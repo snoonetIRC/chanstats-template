@@ -1,0 +1,74 @@
+<!doctype html>
+<html class="mdc-typography">
+	<head>
+		<title>Snoonet Channel Stats</title>
+		<style>
+			.mdc-card {
+				margin-bottom: 20px;
+				margin-right: 20px;
+			}
+			.list {
+				    -webkit-column-count: 3;
+				       -moz-column-count: 3;		
+				            column-count: 3;
+			}
+		</style>
+		    <link rel="stylesheet"
+		          href="node_modules/material-components-web/dist/material-components-web.css">
+	</head>
+	<body>
+	<header class="mdc-toolbar mdc-toolbar--fixed">
+		<div class="mdc-toolbar__row">
+			<section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+				<span class="mdc-toolbar__title">Snoonet Channel Stats</span>
+			</section>
+		</div>
+	</header>
+	<main>
+		<div class="mdc-layout-grid mdc-toolbar-fixed-adjust"><div class="mdc-layout-grid__inner">
+			<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
+				<div class="mdc-card">
+					<div class="mdc-card__actions">
+						<div class="mdc-textfield">
+							<input type="text" id="search" class="mdc-textfield__input" placeholder="Filter channels by name...">
+						</div>
+					</div>
+				</div>
+				<div class="mdc-card">
+					<div class="mdc-card__supporting-text">
+<p>StatsBot is a bot which collects and displays detailed statistics about a channel, including user rankings, totals, and notable numbers. For an example, look at the <a href="https://chanstats.snoonet.org/%23snoonet.html">stats for #snoonet</a></p>
+<p>To summon Statistics to your channel on Snoonet, simply invite it to your channel.<br>
+<code>/invite Statistics #channel</code></p>
+<p>To remove Statistics from your channel on Snoonet, kick it out like you would any other user.<br>
+<code>/kick #channel Statistics</code></p>
+<p>Users can get a link to your stats page in the channel by using the !stats command. For example:<br>
+<code>&lt;flotwig&gt; !stats</code><br>
+<code>-Statistics- Stats for this channel can be found at https://chanstats.snoonet.org/%23snoonet.html</code></p>
+<p>Note: Stats are not generated instantly, so it may take an hour or two for your stats to be generated initially. Please be patient.</p>
+<p>Note for channel owners: If you operate an invite-only or otherwise join-restricted channel, please add an exception for StatsBot so that he can rejoin if he is ever rebooted.</p>
+					</div>
+				</div>
+			</div>
+			<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8" id="channel-list">
+				<div class="mdc-card">
+					<div class="mdc-card__supporting-text">	
+				<ul class="mdc-list list">
+					%lis%
+				</ul>
+				</div>
+			</div>
+		</div></div>
+	</main>
+<script src="/node_modules/list.js/dist/list.min.js"></script>
+<script>
+	var list = new List('channel-list', {
+		'valueNames': ['link'],
+		'searchClass': "mdc-textfield__input"
+	});
+	list.sort('link');
+	document.getElementById('search').oninput = function() {
+		list.search(document.getElementById('search').value);
+	};
+</script>
+</body>
+</html>

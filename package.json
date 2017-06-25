@@ -1,0 +1,16 @@
+{
+  "name": "snoonet-chanstats-template",
+  "version": "1.0.0",
+  "description": "https://chanstats.snoonet.org/",
+  "main": "index.js",
+  "dependencies": {
+    "material-components-web": "^0.13.0",
+    "list.js": "^1.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "flotwig@snoonet.org",
+  "license": "MIT"
+}
